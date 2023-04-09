@@ -20,3 +20,6 @@ report.pdf
 
 #minted package
 report/_minted-report
+
+#git
+token.txt
