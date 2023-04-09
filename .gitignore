@@ -1,0 +1,22 @@
+#C output files
+*.elf
+*.hex
+
+#LATEX output files
+*.log
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.out
+*.xml
+*.gz
+*.toc
+report.pdf
+
+
+#minted package
+report/_minted-report

@@ -1,0 +1,48 @@
+MCU Boot process:
+https://embeddedinventor.com/embedded-bootloader-and-booting-process-explained/
+	0. Reset code
+		only thing that MCU remembers when power off. usually single instruction that gives controll to the next stage which is usually hardware init
+	1. Hardware init
+		MCU does not remember what peripherals it has. hardware init initializes everything that is needed to boot the mcu
+	2. decision: Bootlaoder mode or application mode
+		bootloader mode on PC -> BIOS or UEFI to configure the system (Boot drive, clock speeds and so on)
+		bootloader mode on embedded device -> very simple, setupt some default options for application, reflash application during development, software update after release
+	3. Startup code
+		allocate space and copy all global variables to ram
+		init stack and stackpointer
+		init heap
+		call main
+	4. OS Starting Process(optional)
+		all other needed driver are loaded to give a fully functioning system (In embedded OS same thing but different periferals)(in bare metal this is done in main())
+
+Micro controller boot process(very simply but good explained sole software POV)
+	https://www.beningo.com/understanding-the-microcontroller-boot-process/
+
+MCu Boot process(includes hardware software and secure boot with images and sources)
+	https://www.microcontrollertips.com/what-happens-when-an-mcu-powers-up/
+
+Zephyr boot and init process presentation:
+	https://www.youtube.com/watch?v=tAH5fy0rSo4
+
+MCUboot with Zephyr (includes secure boot section)
+	https://docs.mcuboot.com/readme-zephyr
+
+From zero to main
+	https://interrupt.memfault.com/tag/zero-to-main/
+
+ARMv7E-M Architecture reference manual
+	B1.5.2 Exception number definition
+	B1.5.3 The vector table
+	B1.5.5 Reset behavior
+
+Embedded Systems Security and TrustZone:
+	https://embeddedsecurity.io/sec-arm-arch-core#sec:arm-arch-core-registers
+
+bare metal firmware guideexplains linkerscript, startup code etc.
+	https://github.com/cpq/bare-metal-programming-guide/blob/main/README.md
+
+Source to explain the __attribute__((sectoin(".vertors"))):
+	https://developer.arm.com/documentation/dui0491/i/Compiler-specific-Features/--attribute----section--name-----variable-attribute
+
+Source to explain __attribute__((used))
+	https://developer.arm.com/documentation/dui0491/i/Compiler-specific-Features/--attribute----used---variable-attribute

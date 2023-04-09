@@ -1,0 +1,10 @@
+ > arm-none-eabi-nm -S build_example.o
+ address: size:    type: name:
+                   U     extern_var
+ 00000000 00000004 D     global_var
+ 00000000 0000001a t     local_sum
+ 00000000 00000004 b     local_var_bss
+ 00000004 00000004 d     local_var_data
+ 0000001a 0000003e T     main
+                   U     printf
+
